@@ -1,8 +1,8 @@
-import string
-import random
 
 
 def generate_random_word():
+    import string
+    import random
     with open("/usr/share/dict/words") as opened_file:
         list_of_words = opened_file.read()
 
@@ -11,5 +11,4 @@ def generate_random_word():
         list_of_words = list_of_words.replace(x, '')
 
     words_list = (list_of_words).split()
-    print(words_list)
-    random_word = (random.choice(words_list))
+    return(random.choice(words_list))

@@ -1,4 +1,5 @@
-from word_generator import random_word
+from word_generator import generate_random_word
+random_word = generate_random_word()
 
 
 def get_user_response():
@@ -13,7 +14,7 @@ def hang_man_game():
     count = 0
     print("_ " * len(random_word))
 
-    while count <= 10:
+    while count <= 7:
         print(begin_game_word)
         get_user_response()
         remaining_guesses = "You have {} guesses remaining.".format(9 - count)
@@ -34,3 +35,4 @@ def hang_man_game():
             incorrect_guesses.append(user_answer)
             count += 1
 
+hang_man_game()
