@@ -1,4 +1,4 @@
-
+#import list of words here
 possible_word = []
 correct_word = random.choice(possible_word)
 
@@ -16,9 +16,10 @@ def hang_man_game():
     get_user_response()
 
     if user_answer == letter in correct_word:
-        #get index of letter
-        correct_guesses.append(user_answer)
+        letter_location = correct_word.index(letter)
+        correct_guesses[letter_location].append(user_answer)
         print("Correct guess!")
+
         #print letter in correct index, replace _ with letter
         #print remaining _
     else:
