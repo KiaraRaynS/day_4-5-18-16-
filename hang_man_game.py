@@ -12,7 +12,6 @@ def get_user_response():
 def hang_man_game():
     begin_game_word = ("_ " * print_number)
     count = 0
-
     while count <= 8:
         incorrect_guesses = []
         correct_guesses = []
