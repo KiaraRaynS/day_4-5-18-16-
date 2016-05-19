@@ -1,4 +1,5 @@
 #import list of words here
+#from word_generator import generate_random_word
 possible_word = []
 correct_word = random.choice(possible_word)
 
