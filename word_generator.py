@@ -1,6 +1,5 @@
 import string
 import random
-import re
 
 
 def generate_random_word():
@@ -13,6 +12,4 @@ def generate_random_word():
 
     words_list = (list_of_words).split()
     print(words_list)
-    random_word = random.choice(words_list)
-
-generate_random_word()
+    random_word = (random.choice(words_list))
