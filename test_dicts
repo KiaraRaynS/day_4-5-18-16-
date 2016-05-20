@@ -1,0 +1,14 @@
+words = ['abc', 'acb', 'bac','cb','bca']
+occurances = {}
+index = 0
+for word in words:
+    for idx, letter in enumerate(word):
+        if 'a' == letter:
+            if idx in occurances.keys():
+                occurances[idx] += 1
+            else:
+                occurances[idx] = 1
+
+
+
+print(occurances)
