@@ -9,6 +9,10 @@ for word in words:
             else:
                 occurances[idx] = 1
 
-
-
-print(occurances)
+import operator
+sorted_index = sorted(occurances.items(), key=operator.itemgetter(1))
+common_index = sorted_index[:-2:-1]
+common_index_list = [k for k in common_index]
+true_index = common_index_list[0]
+index_final = true_index[0]
+print(index_final)

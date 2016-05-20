@@ -2,6 +2,7 @@ from user_response import coin_flip
 from user_response import generate_word_length
 from user_response import get_user_response
 from user_response import begin_game
+from user_response import greatest_index_list
 
 
 with open("/usr/share/dict/words") as opened_file:
@@ -20,8 +21,8 @@ def evil_mode():
 
     begin_word = list("_" * word_length)
     begin_count = 0
-    correct_answers[]
-    incorrect_answers[]
+    correct_answers = []
+    incorrect_answers = []
     while begin_count < 10:
         print(begin_word)
         response = get_user_response()
@@ -39,25 +40,15 @@ def evil_mode():
                     return words_list
             print("Sorry, incorrect guess.")
             begin_count += 1
-            incorrect_answers = incorrect_ansers.append(response)
+            incorrect_answers = incorrect_answers.append(response)
             return incorrect_answers
         else:
-            import operator
             new_list = []
             for word in words_list:
                 if response in word:
                     new_list.append(word)
-            largest_list = {}
-            key = index
-            value = words
-            most_common_index = int(index)
-            for word in words_list:
-                if response[index] in largest_list:
-                    largest_list[index] +=1
-                else:
-                    largest_list[index] = 1
-                sorted_indexes = sorted(largest_list.items())
-            begin_word[index] = begin_word.append(response)
+            response_index = greatest_index_list()
+
 
 
 begin_game()
