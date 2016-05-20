@@ -19,7 +19,9 @@ def hang_man_game():
         remaining_guesses = "You have {} guesses remaining.".format(7 - count)
         print(incorrect_guesses)
         print(remaining_guesses)
-        if '_' not in begin_game_word:
+        if len(user_answer) > 1:
+            print("You may only guess single letters.")
+        elif '_' not in begin_game_word:
             print("CONGRADULATIONS!")
             print("{} correctly guessed".format("".join(begin_game_word)).title())
             break
@@ -36,10 +38,19 @@ def hang_man_game():
         elif count == 7:
             print("Sorry, you did not guess all the word letters.")
             print(random_word)
+            response = input("Would you like to play again? Y/N ")
+            response = response.upper()
+            play_again = "Y"
+            if response == play_again:
+                hang_man_game()
             break
         else:
             print("Sorry, that is incorrect")
             incorrect_guesses.append(user_answer)
             count += 1
 
-hang_man_game()
+play_question = input("Would you like to play a letter guessing game? Y/N ")
+play_question = play_question.upper()
+begin_game = "Y"
+if play_question == begin_game:
+    hang_man_game()
