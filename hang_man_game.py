@@ -1,6 +1,3 @@
-from word_generator import generate_random_word
-random_word = generate_random_word()
-print_number = len(random_word)
 
 
 def get_user_response():
@@ -9,6 +6,11 @@ def get_user_response():
 
 
 def hang_man_game():
+
+    from word_generator import generate_random_word
+    random_word = generate_random_word()
+    print_number = len(random_word)
+
     begin_game_word = list("_" * print_number)
     count = 0
     incorrect_guesses = []
