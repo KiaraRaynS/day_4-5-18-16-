@@ -1,4 +1,3 @@
-from evil_mode import evil_mode
 
 
 def coin_flip():
@@ -19,6 +18,7 @@ def get_user_response():
 
 
 def begin_game():
+    from evil_mode import evil_mode
     user_response = input("Would you like to play Evil Hangman? Y/N ")
     user_response = user_response.lower()
     begin = "y"
@@ -27,6 +27,7 @@ def begin_game():
 
 
 def greatest_index_list():
+    from evil_mode import evil_mode
     import operator
     occurances = {}
     for word in new_list:
