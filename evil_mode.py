@@ -1,6 +1,7 @@
 from user_response import coin_flip
 from user_response import generate_word_length
 from user_response import get_user_response
+from user_response import read_document
 
 
 with open("/usr/share/dict/words") as opened_file:
@@ -9,13 +10,14 @@ list_of_words = list_of_words.lower()
 words_list_a = (list_of_words).split()
 words_list = words_list_a
 
+
 def evil_mode():
     word_length = generate_word_length()
+    words_list = read_document()
     for word in words_list:
         possible_words = []
         if len(word) == word_length:
             possible_words = possible_words.append(word)
-            return possible_words
     words_list = possible_words
 
     begin_word = list("_" * word_length)
@@ -37,9 +39,10 @@ def evil_mode():
             print("You already guessed that.")
         elif response in incorrect_answers:
             print("You aready guessed that.")
-        elif coin_flip == True:
+        elif coin_flip == 1:
             for word in words_list:
                 if response in word:
+
                     del(word)
                     return words_list
             print("Sorry, incorrect guess.")
@@ -77,6 +80,6 @@ def evil_mode():
 
 
 begin_game = 'y'
-user_response = input("Would you like to play Evil Mode? Y/N ").lower
-if user_response == begin_game:
+begin_response = input("Would you like to play Evil Mode? Y/N ").lower
+if begin_response == begin_game:
     evil_mode()

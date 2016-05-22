@@ -2,7 +2,7 @@
 
 def coin_flip():
     import random
-    flip_coin = random.ranrange(1)
+    flip_coin = random.ranrange(0, 1)
     return flip_coin
 
 
@@ -24,6 +24,17 @@ def begin_game():
     begin = "y"
     if user_response == begin:
         evil_mode()
+
+
+def read_document():
+    import string
+    with open("/usr/share/dict/words") as opened_file:
+        list_of_words = opened_file.read()
+    list_of_words = list_of_words.lower()
+    for x in string.punctuation:
+        list_of_words = list_of_words.replace(x, '')
+    list_a = list_of_words
+    return list_a
 
 
 def greatest_index_list():
